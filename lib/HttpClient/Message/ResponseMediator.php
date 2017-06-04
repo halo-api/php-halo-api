@@ -42,15 +42,6 @@ class ResponseMediator
         }
         return $pagination;
     }
-    /**
-     * @param ResponseInterface $response
-     *
-     * @return null|string
-     */
-    public static function getApiLimit(ResponseInterface $response)
-    {
-        throw new \LogicException('Not yet implemented');
-    }
 
     /**
      * Get the value for a single header
