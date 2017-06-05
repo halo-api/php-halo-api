@@ -1,5 +1,5 @@
 {
-    "name": "acrobat/php-halo-api",
+    "name": "halo-api/halo-api",
     "description": "A simple Object Oriented PHP API client for the halo api.",
     "type": "library",
     "license": "MIT",
