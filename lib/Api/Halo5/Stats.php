@@ -29,12 +29,12 @@ class Stats extends AbstractApi
         return $this->get('/stats/h5/campaign/matches/'.rawurlencode($matchId));
     }
 
-    public function matchCustom($matchId)
+    public function matchResultCustom($matchId)
     {
         return $this->get('/stats/h5/custom/matches/'.rawurlencode($matchId));
     }
 
-    public function matchWarzone($matchId)
+    public function matchResultWarzone($matchId)
     {
         return $this->get('/stats/h5/warzone/matches/'.rawurlencode($matchId));
     }
@@ -51,21 +51,21 @@ class Stats extends AbstractApi
             $params['seasonId'] = $seasonId;
         }
 
-        $this->get('/stats/h5/servicerecords/arena', $params);
+        return $this->get('/stats/h5/servicerecords/arena', $params);
     }
 
     public function playerServiceRecordsCampaign($players)
     {
-        $this->get('/stats/h5/servicerecords/campaign', ['players' => $players]);
+        return $this->get('/stats/h5/servicerecords/campaign', ['players' => $players]);
     }
 
     public function playerServiceRecordsCustom($players)
     {
-        $this->get('/stats/h5/servicerecords/arena', ['players' => $players]);
+        return $this->get('/stats/h5/servicerecords/custom', ['players' => $players]);
     }
 
     public function playerServiceRecordsWarzone($players)
     {
-        $this->get('/stats/h5/servicerecords/arena', ['players' => $players]);
+        return $this->get('/stats/h5/servicerecords/warzone', ['players' => $players]);
     }
 }

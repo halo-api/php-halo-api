@@ -8,16 +8,18 @@ use HaloApi\Exception\InvalidArgumentException;
 use HaloApi\HttpClient\Builder;
 use Http\Client\Common\HttpMethodsClient;
 use Http\Client\Common\Plugin;
+use Http\Client\HttpClient;
 use Http\Discovery\UriFactoryDiscovery;
 
 /**
  * @method Api\Halo5\Metadata halo5Metadata()
  * @method Api\Halo5\Profile halo5Profile()
  * @method Api\Halo5\Stats halo5Stats()
+ * @method Api\Halo5\Ugc halo5Ugc()
  */
 class Client
 {
-    public function __construct(Builder $httpClientBuilder, $apiKey)
+    public function __construct($apiKey, Builder $httpClientBuilder = null)
     {
         $this->httpClientBuilder = $builder = $httpClientBuilder ?: new Builder();
 
@@ -25,6 +27,19 @@ class Client
         $builder->addPlugin(new Plugin\AddHostPlugin(UriFactoryDiscovery::find()->createUri('https://www.haloapi.com')));
 
         $builder->addHeaderValue('Ocp-Apim-Subscription-Key', $apiKey);
+    }
+
+    /**
+     * Create a Github\Client using a HttpClient.
+     *
+     * @param HttpClient $httpClient
+     *
+     * @return Client
+     */
+    public static function createWithHttpClient(HttpClient $httpClient)
+    {
+        $builder = new Builder($httpClient);
+        return new self($builder);
     }
 
     /**
@@ -48,6 +63,10 @@ class Client
             case 'h5Stats':
             case 'halo5Stats':
                 $api = new Api\Halo5\Stats($this);
+                break;
+            case 'h5Ugc':
+            case 'halo5Ugc':
+                $api = new Api\Halo5\Ugc($this);
                 break;
             default:
                 throw new InvalidArgumentException(sprintf('Undefined api instance called: "%s"', $name));
