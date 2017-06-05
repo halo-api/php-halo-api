@@ -1,4 +1,4 @@
-# PHP Halo API
+# PHP Halo API [![Build Status](https://travis-ci.org/halo-api/php-halo-api.svg?branch=master)](https://travis-ci.org/halo-api/php-halo-api)
 
 A simple Object Oriented wrapper for Halo API
 
