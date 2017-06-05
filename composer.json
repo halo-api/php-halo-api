@@ -15,13 +15,18 @@
         "php-http/discovery": "^1.2",
         "php-http/client-common": "^1.5"
     },
+    "require-dev": {
+        "phpunit/phpunit": "^5.7 || ^6.0",
+        "php-http/guzzle6-adapter": "^1.1"
+    },
     "autoload": {
         "psr-4": {
             "HaloApi\\": "lib/"
         }
     },
-    "require-dev": {
-        "php-http/guzzle6-adapter": "^1.1",
-        "symfony/var-dumper": "^3.3"
+    "autoload-dev": {
+        "psr-4": {
+            "HaloApi\\Tests\\": "tests/"
+        }
     }
 }
