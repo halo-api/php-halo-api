@@ -1,0 +1,23 @@
+sudo: false
+language: php
+
+cache:
+    directories:
+        - vendor
+        - $HOME/.composer/cache
+
+php:
+  - 5.6
+  - 7.0
+  - 7.1
+
+matrix:
+  include:
+    - php: hhvm
+      dist: trusty
+
+install:
+  - travis_retry composer install --no-interaction
+
+script:
+  - vendor/bin/phpunit --verbose --coverage-text
