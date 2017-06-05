@@ -45,7 +45,7 @@ $result = $client->halo5Metadata()->campaignMissions();
 ## Contribute
 
 Please do! The source code is hosted at [GitHub](https://github.com/halo-api/halo-api). 
-If you want a feature or discover a bug, [open an issue](https://github.com/halo-api/halo-api/issues/new) or a pull request.
+If you want a feature or discover a bug, [open an issue](https://github.com/halo-api/php-halo-api/issues/new) or a pull request.
 
 For other updates, follow me on Twitter: [@jeroenthora](https://twitter.com/jeroenthora).
 
