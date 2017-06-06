@@ -87,6 +87,12 @@ class ClientTest extends TestCase
 
             ['h5Ugc', Api\Halo5\Ugc::class],
             ['halo5Ugc', Api\Halo5\Ugc::class],
+
+            ['hw2Metadata', Api\HaloWars2\Metadata::class],
+            ['halowars2Metadata', Api\HaloWars2\Metadata::class],
+
+            ['hw2Stats', Api\HaloWars2\Stats::class],
+            ['halowars2Stats', Api\HaloWars2\Stats::class],
         ];
     }
 }

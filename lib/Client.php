@@ -16,6 +16,8 @@ use Http\Discovery\UriFactoryDiscovery;
  * @method Api\Halo5\Profile halo5Profile()
  * @method Api\Halo5\Stats halo5Stats()
  * @method Api\Halo5\Ugc halo5Ugc()
+ * @method Api\HaloWars2\Metadata halowars2Metadata()
+ * @method Api\HaloWars2\Stats halowars2Stats()
  */
 class Client
 {
@@ -67,6 +69,14 @@ class Client
             case 'h5Ugc':
             case 'halo5Ugc':
                 $api = new Api\Halo5\Ugc($this);
+                break;
+            case 'hw2Metadata':
+            case 'halowars2Metadata':
+                $api = new Api\HaloWars2\Metadata($this);
+                break;
+            case 'hw2Stats':
+            case 'halowars2Stats':
+                $api = new Api\HaloWars2\Stats($this);
                 break;
             default:
                 throw new InvalidArgumentException(sprintf('Undefined api instance called: "%s"', $name));
