@@ -93,6 +93,9 @@ class ClientTest extends TestCase
 
             ['hw2Stats', Api\HaloWars2\Stats::class],
             ['halowars2Stats', Api\HaloWars2\Stats::class],
+
+            ['h5pcStats', Api\Halo5\Pc\Stats::class],
+            ['halo5Spctats', Api\Halo5\Pc\Stats::class],
         ];
     }
 }

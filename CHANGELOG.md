@@ -7,6 +7,7 @@ The change log describes what is "Added", "Removed", "Changed" or "Fixed" betwee
 ### Features
 
 - Added halo wars 2 api endpoints
+- Added halo  pc api endpoints
 
 ## 0.1.0 (First release)
 
