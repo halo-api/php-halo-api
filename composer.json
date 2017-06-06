@@ -3,6 +3,7 @@
     "description": "A simple Object Oriented PHP API client for the halo api.",
     "type": "library",
     "license": "MIT",
+    "keywords": ["halo", "api"],
     "authors": [
         {
             "name": "Jeroen Thora",
