@@ -144,6 +144,23 @@ class StatsTest extends TestCase
     }
 
     /**
+     * @test
+     */
+    public function shouldGetLeaderboardPlayerCsr()
+    {
+        $expectedOutput = ['leaderboard-data'];
+
+        $api = $this->getApiMock();
+
+        $api->expects($this->once())
+            ->method('get')
+            ->with('/stats/hw2/player-leaderboards/csr/123/456', ['count' => 100])
+            ->will($this->returnValue($expectedOutput));
+
+        $this->assertEquals($expectedOutput, $api->leaderboardPlayerCsr(123, 456, ['count' => 100]));
+    }
+
+    /**
      * @return string
      */
     protected function getApiClass()

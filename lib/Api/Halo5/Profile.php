@@ -6,6 +6,11 @@ use HaloApi\Api\AbstractApi;
 
 class Profile extends AbstractApi
 {
+    public function appearance($player)
+    {
+        return $this->get('/profile/h5/profiles/'.rawurlencode($player).'/appearance');
+    }
+
     public function emblemImage($player, $size = null)
     {
         return $this->get('/profile/h5/profiles/'.rawurlencode($player).'/emblem', ['size' => $size]);

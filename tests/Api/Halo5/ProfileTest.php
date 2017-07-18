@@ -42,6 +42,23 @@ class ProfileTest extends TestCase
     }
 
     /**
+     * @test
+     */
+    public function shouldGetPlayerAppearance()
+    {
+        $expectedOutput = ['response'];
+
+        $api = $this->getApiMock();
+
+        $api->expects($this->once())
+            ->method('get')
+            ->with('/profile/h5/profiles/playera/appearance')
+            ->will($this->returnValue($expectedOutput));
+
+        $this->assertEquals($expectedOutput, $api->appearance('playera'));
+    }
+
+    /**
      * @return string
      */
     protected function getApiClass()

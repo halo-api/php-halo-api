@@ -45,4 +45,9 @@ class Stats extends AbstractApi
     {
         return $this->get('/stats/hw2/xp', ['players' => $players]);
     }
+
+    public function leaderboardPlayerCsr($seasonId, $playlistId, array $params)
+    {
+        return $this->get('/stats/hw2/player-leaderboards/csr/'.rawurlencode($seasonId).'/'.rawurlencode($playlistId), $params);
+    }
 }

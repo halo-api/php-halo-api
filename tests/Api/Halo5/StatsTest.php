@@ -212,6 +212,57 @@ class StatsTest extends TestCase
     }
 
     /**
+     * @test
+     */
+    public function shouldGetCompany()
+    {
+        $expectedOutput = ['data1', 'data2'];
+
+        $api = $this->getApiMock();
+
+        $api->expects($this->once())
+            ->method('get')
+            ->with('/stats/h5/companies/123')
+            ->will($this->returnValue($expectedOutput));
+
+        $this->assertEquals($expectedOutput, $api->company(123));
+    }
+
+    /**
+     * @test
+     */
+    public function shouldGetCompanyCommendations()
+    {
+        $expectedOutput = ['data1', 'data2'];
+
+        $api = $this->getApiMock();
+
+        $api->expects($this->once())
+            ->method('get')
+            ->with('/stats/h5/companies/123/commendations')
+            ->will($this->returnValue($expectedOutput));
+
+        $this->assertEquals($expectedOutput, $api->companyCommendations(123));
+    }
+
+    /**
+     * @test
+     */
+    public function shouldGetPlayerCommendations()
+    {
+        $expectedOutput = ['data1', 'data2'];
+
+        $api = $this->getApiMock();
+
+        $api->expects($this->once())
+            ->method('get')
+            ->with('/stats/h5/players/playera/commendations')
+            ->will($this->returnValue($expectedOutput));
+
+        $this->assertEquals($expectedOutput, $api->playerCommendations('playera'));
+    }
+
+    /**
      * @return string
      */
     protected function getApiClass()

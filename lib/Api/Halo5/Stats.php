@@ -68,4 +68,19 @@ class Stats extends AbstractApi
     {
         return $this->get('/stats/h5/servicerecords/warzone', ['players' => $players]);
     }
+
+    public function company($companyId)
+    {
+        return $this->get('/stats/h5/companies/'.rawurlencode($companyId));
+    }
+
+    public function companyCommendations($companyId)
+    {
+        return $this->get('/stats/h5/companies/'.rawurlencode($companyId).'/commendations');
+    }
+
+    public function playerCommendations($player)
+    {
+        return $this->get('/stats/h5/players/'.rawurlencode($player).'/commendations');
+    }
 }
