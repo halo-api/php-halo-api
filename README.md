@@ -15,7 +15,7 @@ A simple Object Oriented wrapper for Halo API
 
 Then run the following command to require the library and install a http transport adapter:
 ```bash
-composer require halo-api/halo-api php-http/guzzle6-adapter
+composer require halo-api/halo-api php-http/guzzle6-adapter "^1.1"
 ```
 
 ### Usage
