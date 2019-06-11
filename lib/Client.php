@@ -6,6 +6,7 @@ use HaloApi\Api\AbstractApi;
 use HaloApi\Exception\BadMethodCallException;
 use HaloApi\Exception\InvalidArgumentException;
 use HaloApi\HttpClient\Builder;
+use HaloApi\HttpClient\Plugin\ExceptionThrowerPlugin;
 use Http\Client\Common\HttpMethodsClient;
 use Http\Client\Common\Plugin;
 use Http\Client\HttpClient;
@@ -26,6 +27,7 @@ class Client
     {
         $this->httpClientBuilder = $builder = $httpClientBuilder ?: new Builder();
 
+        $builder->addPlugin(new ExceptionThrowerPlugin());
         $builder->addPlugin(new Plugin\RedirectPlugin());
         $builder->addPlugin(new Plugin\AddHostPlugin(UriFactoryDiscovery::find()->createUri('https://www.haloapi.com')));
 
