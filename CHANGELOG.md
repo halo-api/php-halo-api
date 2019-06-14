@@ -2,6 +2,16 @@
 
 The change log describes what is "Added", "Removed", "Changed" or "Fixed" between each release. 
 
+## 0.4.0
+
+## Features
+
+- Improved handling of api exceptions and ratelimit failures
+
+## Fixes
+
+- Fixed install instruction for httplug 1.0
+
 ## 0.3.0
 
 ### Features
